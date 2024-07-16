@@ -33,22 +33,22 @@
 		<link>
 			<name>apps</name>
 			<type>2</type>
-			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/apps</location>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/apps</locationURI>
 		</link>
 		<link>
 			<name>common</name>
 			<type>2</type>
-			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/common</location>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/common</locationURI>
 		</link>
 		<link>
 			<name>libs</name>
 			<type>2</type>
-			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/libs</location>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/libs</locationURI>
 		</link>
 		<link>
 			<name>lr11xx</name>
 			<type>2</type>
-			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/lr11xx</location>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/lr11xx</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
