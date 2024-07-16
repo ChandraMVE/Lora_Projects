@@ -29,4 +29,26 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>apps</name>
+			<type>2</type>
+			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/apps</location>
+		</link>
+		<link>
+			<name>common</name>
+			<type>2</type>
+			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/common</location>
+		</link>
+		<link>
+			<name>libs</name>
+			<type>2</type>
+			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/libs</location>
+		</link>
+		<link>
+			<name>lr11xx</name>
+			<type>2</type>
+			<location>D:/Projects/LORA/Lora-net/MVE_repo/Lora_Projects/LR1121DVK1TBKS/lr11xx</location>
+		</link>
+	</linkedResources>
 </projectDescription>
