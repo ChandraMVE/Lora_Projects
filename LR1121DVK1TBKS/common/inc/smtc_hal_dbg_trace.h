@@ -98,6 +98,8 @@ extern "C" {
     do                                                       \
     {                                                        \
         HAL_DBG_TRACE_PRINTF( HAL_DBG_TRACE_COLOR_GREEN );   \
+        HAL_DBG_TRACE_PRINTF( __FILE_NAME__ );					 \
+		HAL_DBG_TRACE_PRINTF( ": %d: ",__LINE__ ); 					 \
         HAL_DBG_TRACE_PRINTF( "INFO: " );                    \
         HAL_DBG_TRACE_PRINTF( __VA_ARGS__ );                 \
         HAL_DBG_TRACE_PRINTF( HAL_DBG_TRACE_COLOR_DEFAULT ); \
@@ -107,6 +109,8 @@ extern "C" {
     do                                                       \
     {                                                        \
         HAL_DBG_TRACE_PRINTF( HAL_DBG_TRACE_COLOR_YELLOW );  \
+        HAL_DBG_TRACE_PRINTF( __FILE_NAME__ );					 \
+		HAL_DBG_TRACE_PRINTF( ": %d: ",__LINE__ ); 					 \
         HAL_DBG_TRACE_PRINTF( "WARN: " );                    \
         HAL_DBG_TRACE_PRINTF( __VA_ARGS__ );                 \
         HAL_DBG_TRACE_PRINTF( HAL_DBG_TRACE_COLOR_DEFAULT ); \
@@ -116,6 +120,8 @@ extern "C" {
     do                                                       \
     {                                                        \
         HAL_DBG_TRACE_PRINTF( HAL_DBG_TRACE_COLOR_RED );     \
+        HAL_DBG_TRACE_PRINTF( __FILE_NAME__ );					 \
+		HAL_DBG_TRACE_PRINTF( ": %d: ",__LINE__ ); 					 \
         HAL_DBG_TRACE_PRINTF( "ERROR: " );                   \
         HAL_DBG_TRACE_PRINTF( __VA_ARGS__ );                 \
         HAL_DBG_TRACE_PRINTF( HAL_DBG_TRACE_COLOR_DEFAULT ); \
@@ -124,16 +130,16 @@ extern "C" {
 #define HAL_DBG_TRACE_ARRAY( msg, array, len )                                \
     do                                                                        \
     {                                                                         \
-        HAL_DBG_TRACE_PRINTF( "%s - (%lu bytes):\n", msg, ( uint32_t ) len ); \
+        HAL_DBG_TRACE_PRINTF( "%s - (%lu bytes):", msg, ( uint32_t ) len ); \
         for( uint32_t i = 0; i < ( uint32_t ) len; i++ )                      \
         {                                                                     \
             if( ( ( i % 16 ) == 0 ) && ( i > 0 ) )                            \
             {                                                                 \
-                HAL_DBG_TRACE_PRINTF( "\n" );                                 \
+                HAL_DBG_TRACE_PRINTF( "\n\r" );                                 \
             }                                                                 \
             HAL_DBG_TRACE_PRINTF( " %02X", array[i] );                        \
         }                                                                     \
-        HAL_DBG_TRACE_PRINTF( "\n" );                                         \
+        HAL_DBG_TRACE_PRINTF( "\n\r" );                                         \
     } while( 0 );
 
 #define HAL_DBG_TRACE_PACKARRAY( msg, array, len )       \
