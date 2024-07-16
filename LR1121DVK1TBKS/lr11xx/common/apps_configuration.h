@@ -59,10 +59,10 @@ extern "C" {
 #define PACKET_TYPE LR11XX_RADIO_PKT_TYPE_LORA
 #endif
 #ifndef RF_FREQ_IN_HZ
-#define RF_FREQ_IN_HZ 490000000U
+#define RF_FREQ_IN_HZ 868130000U
 #endif
 #ifndef TX_OUTPUT_POWER_DBM
-#define TX_OUTPUT_POWER_DBM 13  // range [-17, +22] for sub-G, range [-18, 13] for 2.4G ( HF_PA )
+#define TX_OUTPUT_POWER_DBM 22  // range [-17, +22] for sub-G, range [-18, 13] for 2.4G ( HF_PA )
 #endif
 #ifndef PA_RAMP_TIME
 #define PA_RAMP_TIME LR11XX_RADIO_RAMP_48_US
@@ -71,7 +71,7 @@ extern "C" {
 #define FALLBACK_MODE LR11XX_RADIO_FALLBACK_STDBY_RC
 #endif
 #ifndef ENABLE_RX_BOOST_MODE
-#define ENABLE_RX_BOOST_MODE false
+#define ENABLE_RX_BOOST_MODE true
 #endif
 #ifndef PAYLOAD_LENGTH
 #define PAYLOAD_LENGTH 7
@@ -81,7 +81,7 @@ extern "C" {
  * @brief Modulation parameters for LoRa packets
  */
 #ifndef LORA_SPREADING_FACTOR
-#define LORA_SPREADING_FACTOR LR11XX_RADIO_LORA_SF7
+#define LORA_SPREADING_FACTOR LR11XX_RADIO_LORA_SF12
 #endif
 #ifndef LORA_BANDWIDTH
 #define LORA_BANDWIDTH LR11XX_RADIO_LORA_BW_125
