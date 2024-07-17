@@ -357,16 +357,7 @@ lr11xx_status_t lr11xx_radio_set_gfsk_sync_word( const void*   context,
     return ( lr11xx_status_t ) lr11xx_hal_write( context, cbuffer, LR11XX_RADIO_SET_GFSK_SYNC_WORD_CMD_LENGTH, 0, 0 );
 }
 
-#ifndef LR11XX_DISABLE_WARNINGS
-#warning \
-    "The function lr11xx_radio_set_lora_sync_word replaces the \
-deprecated function lr11xx_radio_set_lora_public_network. \
-lr11xx_radio_set_lora_sync_word, however, is incompatible \
-with chip firmware versions prior to 0x303. For those legacy chips \
-only, please use lr11xx_radio_set_lora_public_network. \
-To deactivate this warning, define C preprocessor symbol \
-LR11XX_DISABLE_WARNINGS."
-#endif
+
 lr11xx_status_t lr11xx_radio_set_lora_sync_word( const void* context, const uint8_t sync_word )
 {
     const uint8_t cbuffer[LR11XX_RADIO_SET_LORA_SYNC_WORD_CMD_LENGTH] = {
