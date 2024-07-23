@@ -153,6 +153,8 @@ int main( void )
     apps_common_shield_init( );
     uart_init();
 
+    switch_pressed();
+
     HAL_DBG_TRACE_INFO( "===== LR11xx Ping-Pong example =====\n\r" );
     apps_common_print_sdk_driver_version( );
 
