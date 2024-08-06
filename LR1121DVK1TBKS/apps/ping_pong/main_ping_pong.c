@@ -51,6 +51,7 @@
 #include "smtc_hal_dbg_trace.h"
 #include "uart_init.h"
 #include "stm32l4xx_ll_utils.h"
+#include "filter.hp.rst.on.int.h"
 
 /*
  * -----------------------------------------------------------------------------
@@ -155,6 +156,7 @@ int main( void )
 
     HAL_DBG_TRACE_INFO( "===== LR11xx Ping-Pong example =====\n\r" );
     apps_common_print_sdk_driver_version( );
+    lis2de12_filter_hp_rst_on_int();
 
     context = apps_common_lr11xx_get_context( );
 
@@ -283,3 +285,4 @@ static void ping_pong_reception_failure_handling( void )
     apps_common_lr11xx_handle_pre_tx( );
     ASSERT_LR11XX_RC( lr11xx_radio_set_tx( context, 0 ) );
 }
+
