@@ -51,6 +51,7 @@
 #include "smtc_hal_dbg_trace.h"
 #include "uart_init.h"
 #include "stm32l4xx_ll_utils.h"
+#include "lis2de12_drv.h"
 
 /*
  * -----------------------------------------------------------------------------
@@ -184,6 +185,7 @@ int main( void )
     while( 1 )
     {
         apps_common_lr11xx_irq_process( context, IRQ_MASK );
+        lis2de12_filter_hp_rst_on_int();
     }
 }
 
