@@ -24,6 +24,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "lis2de12_reg.h"
+#include "main.h"
 
 #include "stm32l4xx_hal.h"
 #include "stm32l4xx_ll_gpio.h"
@@ -40,7 +41,7 @@ I2C_HandleTypeDef hi2c1;
 
 /* Private variables ---------------------------------------------------------*/
 static int16_t data_raw_acceleration[3];
-static float acceleration_mg[3];
+float acceleration_mg[3];
 static uint8_t whoamI;
 
 /* Extern variables ----------------------------------------------------------*/
@@ -59,11 +60,13 @@ static int32_t platform_read(void *handle, uint8_t reg, uint8_t *bufp,
 static void platform_delay(uint32_t ms);
 static void platform_init(void);
 static void MX_I2C1_Init(void);
+static void MX_GPIO_Init(void);
 
 /* Main Example --------------------------------------------------------------*/
 void lis2de12_filter_hp_rst_on_int(void)
 {
   lis2de12_reg_t reg;
+  lis2de12_ctrl_reg3_t reg3;
   stmdev_ctx_t dev_ctx;
   /* Initialize mems driver interface */
   dev_ctx.write_reg = platform_write;
@@ -85,6 +88,14 @@ void lis2de12_filter_hp_rst_on_int(void)
 
   /* Set full scale to 2g */
   lis2de12_full_scale_set(&dev_ctx, LIS2DE12_2g);
+  /*set interrupt on INT1 I1_ZYXDA*/
+  reg3.i1_overrun = PROPERTY_ENABLE;
+  reg3.i1_wtm = PROPERTY_ENABLE;
+  reg3.i1_zyxda = PROPERTY_ENABLE;
+  reg3.i1_ia2 = PROPERTY_ENABLE;
+  reg3.i1_ia1 = PROPERTY_ENABLE;
+  reg3.i1_click = PROPERTY_ENABLE;
+  lis2de12_pin_int1_config_set(&dev_ctx,&reg3);
   /* route HP filter output on outputs registers */
   lis2de12_high_pass_on_outputs_set(&dev_ctx, PROPERTY_ENABLE);
   /* route HP filter output on interrupt generator 1 */
@@ -106,7 +117,7 @@ void lis2de12_filter_hp_rst_on_int(void)
   lis2de12_data_rate_set(&dev_ctx, LIS2DE12_ODR_25Hz);
 
   /* Read samples in polling mode (no int) */
-//  while (1) {
+  while (1) {
     /* Read output only if new value available */
     lis2de12_xl_data_ready_get(&dev_ctx, &reg.byte);
 
@@ -121,13 +132,12 @@ void lis2de12_filter_hp_rst_on_int(void)
         lis2de12_from_fs2_to_mg(data_raw_acceleration[1]);
       acceleration_mg[2] =
         lis2de12_from_fs2_to_mg(data_raw_acceleration[2]);
-//      sprintf((char *)tx_buffer,
-//              "Acceleration [mg]:\t%4.2f\t%4.2f\t%4.2f\t%02X\r\n",
-//              acceleration_mg[0], acceleration_mg[1], acceleration_mg[2], reg.byte);
-//      tx_com(tx_buffer, strlen((char const *)tx_buffer));
-      HAL_DBG_TRACE_INFO( "AccX: %08.4f AccY: %08.4f AccZ: %08.4f\n\r", acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
+      if ((GPIOA->IDR & LL_GPIO_PIN_9) != 0x00u)
+      {
+    	  HAL_DBG_TRACE_INFO( "AccX: %08.4f AccY: %08.4f AccZ: %08.4f\n\r", acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
+      }
     }
-//  }
+  }
 }
 
 /*
@@ -234,5 +244,90 @@ static void MX_I2C1_Init(void)
 static void platform_init(void)
 {
 	MX_I2C1_Init();
+	MX_GPIO_Init();
 }
 
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  LL_EXTI_InitTypeDef EXTI_InitStruct = {0};
+  LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
+
+  /* GPIO Ports Clock Enable */
+  LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOC);
+  LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOH);
+  LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOA);
+  LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOB);
+
+  /**/
+  LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_0|LL_GPIO_PIN_1);
+
+  /**/
+  LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_0|LL_GPIO_PIN_8);
+
+  /**/
+  LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_0|LL_GPIO_PIN_4);
+
+  /**/
+  LL_SYSCFG_SetEXTISource(LL_SYSCFG_EXTI_PORTC, LL_SYSCFG_EXTI_LINE13);
+
+  /**/
+  EXTI_InitStruct.Line_0_31 = LL_EXTI_LINE_13;
+  EXTI_InitStruct.Line_32_63 = LL_EXTI_LINE_NONE;
+  EXTI_InitStruct.LineCommand = ENABLE;
+  EXTI_InitStruct.Mode = LL_EXTI_MODE_IT;
+  EXTI_InitStruct.Trigger = LL_EXTI_TRIGGER_FALLING;
+  LL_EXTI_Init(&EXTI_InitStruct);
+
+  /**/
+  LL_GPIO_SetPinPull(B1_GPIO_Port, B1_Pin, LL_GPIO_PULL_NO);
+
+  /**/
+  LL_GPIO_SetPinMode(B1_GPIO_Port, B1_Pin, LL_GPIO_MODE_INPUT);
+
+  /**/
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_0|LL_GPIO_PIN_1;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /**/
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_0|LL_GPIO_PIN_8;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /**/
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_1|LL_GPIO_PIN_4|LL_GPIO_PIN_9;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /**/
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_0|LL_GPIO_PIN_4;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /**/
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_3;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
+}

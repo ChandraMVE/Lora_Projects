@@ -111,6 +111,12 @@
 
 /*
  * -----------------------------------------------------------------------------
+ * --- GLOBAL VARIABLES -------------------------------------------------------
+ */
+extern float acceleration_mg[3];
+
+/*
+ * -----------------------------------------------------------------------------
  * --- PRIVATE TYPES -----------------------------------------------------------
  */
 
@@ -122,6 +128,7 @@
 static lr11xx_hal_context_t* context;
 
 static uint8_t buffer_tx[PAYLOAD_LENGTH];
+
 static bool    is_master = true;
 
 static const uint8_t ping_msg[PING_PONG_PREFIX_SIZE] = "PING";
@@ -129,6 +136,7 @@ static const uint8_t pong_msg[PING_PONG_PREFIX_SIZE] = "PONG";
 
 static uint8_t  iteration       = 0;
 static uint16_t packets_to_sync = 0;
+
 
 /*
  * -----------------------------------------------------------------------------
@@ -184,8 +192,8 @@ int main( void )
 
     while( 1 )
     {
-        apps_common_lr11xx_irq_process( context, IRQ_MASK );
-        lis2de12_filter_hp_rst_on_int();
+//        apps_common_lr11xx_irq_process( context, IRQ_MASK );
+    	lis2de12_filter_hp_rst_on_int();
     }
 }
 
@@ -195,6 +203,7 @@ void on_tx_done( void )
     HAL_DBG_TRACE_INFO( "Sent message %s, iteration %d\n\r", buffer_tx, iteration );
 
     LL_mDelay( DELAY_PING_PONG_PACE_MS );
+//    lis2de12_filter_hp_rst_on_int();
 
     apps_common_lr11xx_handle_pre_rx( );
     ASSERT_LR11XX_RC( lr11xx_radio_set_rx(
