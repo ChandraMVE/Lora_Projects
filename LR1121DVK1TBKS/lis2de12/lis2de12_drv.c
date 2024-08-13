@@ -125,9 +125,7 @@ void lis2de12_filter_hp_rst_on_int(void)
 //              "Acceleration [mg]:\t%4.2f\t%4.2f\t%4.2f\t%02X\r\n",
 //              acceleration_mg[0], acceleration_mg[1], acceleration_mg[2], reg.byte);
 //      tx_com(tx_buffer, strlen((char const *)tx_buffer));
-      HAL_DBG_TRACE_INFO( "AccX: %ld \n\r", acceleration_mg[0]);
-      HAL_DBG_TRACE_INFO( "AccY: %ld \n\r", acceleration_mg[1]);
-      HAL_DBG_TRACE_INFO( "AccZ: %ld \n\r", acceleration_mg[2]);
+      HAL_DBG_TRACE_INFO( "AccX: %08.4f AccY: %08.4f AccZ: %08.4f\n\r", acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
     }
 //  }
 }
