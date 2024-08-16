@@ -135,6 +135,7 @@ void lis2de12_filter_hp_rst_on_int(void)
       if ((GPIOA->IDR & LL_GPIO_PIN_9) != 0x00u)
       {
     	  HAL_DBG_TRACE_INFO( "AccX: %08.4f AccY: %08.4f AccZ: %08.4f\n\r", acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
+    	  break;
       }
     }
   }

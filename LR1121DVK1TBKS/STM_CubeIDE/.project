@@ -55,5 +55,25 @@
 			<type>2</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/lr11xx</locationURI>
 		</link>
+		<link>
+			<name>lis2de12/lis2de12_drv.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lis2de12/lis2de12_drv.c</locationURI>
+		</link>
+		<link>
+			<name>lis2de12/lis2de12_drv.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lis2de12/lis2de12_drv.h</locationURI>
+		</link>
+		<link>
+			<name>lis2de12/lis2de12_reg.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lis2de12/lis2de12_reg.c</locationURI>
+		</link>
+		<link>
+			<name>lis2de12/lis2de12_reg.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lis2de12/lis2de12_reg.h</locationURI>
+		</link>
 	</linkedResources>
 </projectDescription>

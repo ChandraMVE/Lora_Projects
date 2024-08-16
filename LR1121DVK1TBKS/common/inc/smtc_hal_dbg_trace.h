@@ -137,7 +137,7 @@ extern "C" {
             {                                                                 \
                 HAL_DBG_TRACE_PRINTF( "\n\r" );                                 \
             }                                                                 \
-            HAL_DBG_TRACE_PRINTF( " %02X", array[i] );                        \
+            HAL_DBG_TRACE_PRINTF( " %d", array[i] );                        \
         }                                                                     \
         HAL_DBG_TRACE_PRINTF( "\n\r" );                                         \
     } while( 0 );

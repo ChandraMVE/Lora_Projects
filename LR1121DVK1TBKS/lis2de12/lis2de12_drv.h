@@ -25,6 +25,10 @@
 extern "C" {
 #endif  
 
+extern float acceleration_mg[3];
+
+
+
 void lis2de12_filter_hp_rst_on_int(void);
 
 #ifdef __cplusplus
