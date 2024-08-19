@@ -31,7 +31,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-
+// Transmitter code.
 /*
  * -----------------------------------------------------------------------------
  * --- DEPENDENCIES ------------------------------------------------------------
@@ -51,7 +51,7 @@
 #include "smtc_hal_dbg_trace.h"
 #include "uart_init.h"
 #include "stm32l4xx_ll_utils.h"
-#include "filter.hp.rst.on.int.h"
+#include "lis2de12_drv.h"
 
 /*
  * -----------------------------------------------------------------------------
@@ -111,8 +111,22 @@
 
 /*
  * -----------------------------------------------------------------------------
+ * --- GLOBAL VARIABLES -------------------------------------------------------
+ */
+//uint8_t acceleration_mg[3];
+
+/*
+ * -----------------------------------------------------------------------------
  * --- PRIVATE TYPES -----------------------------------------------------------
  */
+union acceleration_data
+{
+	float 	aceeleration[3];
+	uint8_t buffer_tx[PAYLOAD_LENGTH];
+
+};
+
+union acceleration_data tx,rx;
 
 /*
  * -----------------------------------------------------------------------------
@@ -121,14 +135,19 @@
 
 static lr11xx_hal_context_t* context;
 
-static uint8_t buffer_tx[PAYLOAD_LENGTH];
+//static uint8_t buffer_tx[PAYLOAD_LENGTH];
+
 static bool    is_master = true;
 
-static const uint8_t ping_msg[PING_PONG_PREFIX_SIZE] = "PING";
-static const uint8_t pong_msg[PING_PONG_PREFIX_SIZE] = "PONG";
+//static const uint8_t ping_msg[PING_PONG_PREFIX_SIZE] = "PING";
+//static const uint8_t pong_msg[PING_PONG_PREFIX_SIZE] = "PONG";
 
 static uint8_t  iteration       = 0;
 static uint16_t packets_to_sync = 0;
+
+uint8_t buffer_rx[PAYLOAD_LENGTH];
+uint8_t size;
+uint8_t receive_buffer[PAYLOAD_LENGTH];
 
 /*
  * -----------------------------------------------------------------------------
@@ -154,9 +173,9 @@ int main( void )
     apps_common_shield_init( );
     uart_init();
 
-    HAL_DBG_TRACE_INFO( "===== LR11xx Ping-Pong example =====\n\r" );
-    apps_common_print_sdk_driver_version( );
+    HAL_DBG_TRACE_INFO( " ===== LR11xx Transmitter example =====\n\r" );
     lis2de12_filter_hp_rst_on_int();
+    apps_common_print_sdk_driver_version( );
 
     context = apps_common_lr11xx_get_context( );
 
@@ -168,85 +187,43 @@ int main( void )
     ASSERT_LR11XX_RC( lr11xx_system_clear_irq_status( context, LR11XX_SYSTEM_IRQ_ALL_MASK ) );
 
     /* Intializes random number generator */
+
     srand( 10 );
 
-    memcpy( buffer_tx, ping_msg, PING_PONG_PREFIX_SIZE );
-    buffer_tx[PING_PONG_PREFIX_SIZE] = ( uint8_t ) 0;
-    buffer_tx[ITERATION_INDEX]       = ( uint8_t ) ( iteration );
-    for( int i = PING_PONG_PREFIX_SIZE + 1 + 1; i < PAYLOAD_LENGTH; i++ )
+    for ( int i=0; i < 3; i++)
     {
-        buffer_tx[i] = i;
+    	tx.aceeleration[i] = acceleration_mg[i];
     }
 
-    ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, buffer_tx, PAYLOAD_LENGTH ) );
+//    memcpy( buffer_tx, (uint8_t *)acceleration_mg, PAYLOAD_LENGTH );
+
+    ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, tx.buffer_tx, PAYLOAD_LENGTH ) );
 
     apps_common_lr11xx_handle_pre_tx( );
+
     ASSERT_LR11XX_RC( lr11xx_radio_set_tx( context, 0 ) );
 
     while( 1 )
     {
         apps_common_lr11xx_irq_process( context, IRQ_MASK );
     }
+
 }
 
 void on_tx_done( void )
 {
     apps_common_lr11xx_handle_post_tx( );
-    HAL_DBG_TRACE_INFO( "Sent message %s, iteration %d\n\r", buffer_tx, iteration );
+    HAL_DBG_TRACE_INFO( "Transmitted message of X axis %f, Transmitted message of Y axis %f, Transmitted message of Z axis %f"
+    		"\n\r", tx.aceeleration[0], tx.aceeleration[1] , tx.aceeleration[2]  );
 
     LL_mDelay( DELAY_PING_PONG_PACE_MS );
 
-    apps_common_lr11xx_handle_pre_rx( );
-    ASSERT_LR11XX_RC( lr11xx_radio_set_rx(
-        context,
-        get_time_on_air_in_ms( ) + RX_TIMEOUT_VALUE + rand( ) % 500 ) );  // Random delay to avoid
-                                                                          // unwanted synchronization
-}
+    // lis2de12_filter_hp_rst_on_int();
 
-void on_rx_done( void )
-{
-    uint8_t buffer_rx[PAYLOAD_LENGTH];
-    uint8_t size;
-
-    packets_to_sync = 0;
-    apps_common_lr11xx_handle_post_rx( );
-
-
-    apps_common_lr11xx_receive( context, buffer_rx, PAYLOAD_LENGTH, &size );
-    iteration = buffer_rx[ITERATION_INDEX];
-
-    iteration++;
-    HAL_DBG_TRACE_INFO( "Received message %s, iteration %d\n\r", buffer_rx, iteration );
-
-    if( is_master == true )
-    {
-        if( memcmp( buffer_rx, ping_msg, PING_PONG_PREFIX_SIZE ) == 0 )
-        {
-            is_master = false;
-            memcpy( buffer_tx, pong_msg, PING_PONG_PREFIX_SIZE );
-        }
-        else if( memcmp( buffer_rx, pong_msg, PING_PONG_PREFIX_SIZE ) != 0 )
-        {
-            HAL_DBG_TRACE_ERROR( "Unexpected message\n\r" );
-        }
-    }
-    else
-    {
-        if( memcmp( buffer_rx, ping_msg, PING_PONG_PREFIX_SIZE ) != 0 )
-        {
-            HAL_DBG_TRACE_ERROR( "Unexpected message\n\r" );
-
-            is_master = true;
-            memcpy( buffer_tx, ping_msg, PING_PONG_PREFIX_SIZE );
-        }
-    }
-
-    LL_mDelay( DELAY_PING_PONG_PACE_MS + DELAY_BEFORE_TX_MS );
-    buffer_tx[ITERATION_INDEX] = iteration;
-
-    ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, buffer_tx, PAYLOAD_LENGTH ) );
+    ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, tx.buffer_tx, PAYLOAD_LENGTH ) );
 
     apps_common_lr11xx_handle_pre_tx( );
+
     ASSERT_LR11XX_RC( lr11xx_radio_set_tx( context, 0 ) );
 }
 
@@ -277,12 +254,11 @@ static void ping_pong_reception_failure_handling( void )
 
     is_master = true;
     iteration = 0;
-    memcpy( buffer_tx, ping_msg, PING_PONG_PREFIX_SIZE );
-    buffer_tx[ITERATION_INDEX] = iteration;
 
-    ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, buffer_tx, PAYLOAD_LENGTH ) );
+    tx.buffer_tx[ITERATION_INDEX] = iteration;
+
+    ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, tx.buffer_tx, PAYLOAD_LENGTH ) );
 
     apps_common_lr11xx_handle_pre_tx( );
     ASSERT_LR11XX_RC( lr11xx_radio_set_tx( context, 0 ) );
 }
-

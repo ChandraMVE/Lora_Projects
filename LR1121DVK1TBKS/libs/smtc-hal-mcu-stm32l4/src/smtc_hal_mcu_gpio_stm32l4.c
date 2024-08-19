@@ -448,7 +448,7 @@ smtc_hal_mcu_status_t smtc_hal_mcu_gpio_get_state( smtc_hal_mcu_gpio_inst_t inst
     }
     else if( pin_mode == LL_GPIO_MODE_INPUT )
     {
-        *state = ( LL_GPIO_IsInputPinSet( inst->port, inst->pin ) == 1 ) ? SMTC_HAL_MCU_GPIO_STATE_HIGH
+         *state = ( LL_GPIO_IsInputPinSet( inst->port, inst->pin ) == 1 ) ? SMTC_HAL_MCU_GPIO_STATE_HIGH
                                                                          : SMTC_HAL_MCU_GPIO_STATE_LOW;
     }
     else
