@@ -51,11 +51,8 @@
 #include "smtc_hal_dbg_trace.h"
 #include "uart_init.h"
 #include "stm32l4xx_ll_utils.h"
-<<<<<<< HEAD:LR1121DVK1TBKS/apps/ping_pong/main_ping_pong.c
-#include "filter.hp.rst.on.int.h"
-=======
+
 #include "lis2de12_drv.h"
->>>>>>> a3fc3798b8b6f1c16bdf7bde784534fc1f6777c0:LR1121DVK1TBKS/apps/ping_pong/main_receive.c
 
 /*
  * -----------------------------------------------------------------------------
@@ -177,7 +174,7 @@ int main( void )
     apps_common_shield_init( );
     uart_init();
 
-    HAL_DBG_TRACE_INFO( " ===== LR11xx Ping-Pong example =====\n\r" );
+    HAL_DBG_TRACE_INFO( " ===== LR11xx Receiver example =====\n\r" );
     lis2de12_filter_hp_rst_on_int();
     apps_common_print_sdk_driver_version( );
     lis2de12_filter_hp_rst_on_int();
@@ -195,6 +192,8 @@ int main( void )
 
     srand( 10 );
 
+    apps_common_lr11xx_receive( context, receive_buffer, PAYLOAD_LENGTH, &size );
+
     apps_common_lr11xx_handle_pre_rx( );
     ASSERT_LR11XX_RC( lr11xx_radio_set_rx(
         context,
@@ -208,17 +207,7 @@ int main( void )
 
 }
 
-void on_tx_done( void )
-{
-    apps_common_lr11xx_handle_post_tx( );
-    HAL_DBG_TRACE_INFO( "Transmitted message of X axis %f, Transmitted message of Y axis %f, Transmitted message of Z axis %f"
-    		"\n\r", tx.aceeleration[0], tx.aceeleration[1] , tx.aceeleration[2]  );
 
-    LL_mDelay( DELAY_PING_PONG_PACE_MS );
-//    lis2de12_filter_hp_rst_on_int();
-
-
-}
 
 void on_rx_done( void )
 {
@@ -275,7 +264,7 @@ static void ping_pong_reception_failure_handling( void )
 
     ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, tx.buffer_tx, PAYLOAD_LENGTH ) );
 
-    apps_common_lr11xx_handle_pre_tx( );
-    ASSERT_LR11XX_RC( lr11xx_radio_set_tx( context, 0 ) );
+    apps_common_lr11xx_handle_pre_rx( );
+    ASSERT_LR11XX_RC( lr11xx_radio_set_rx( context, 0 ) );
 }
 

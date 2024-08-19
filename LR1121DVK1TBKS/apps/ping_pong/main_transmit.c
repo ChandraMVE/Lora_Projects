@@ -93,7 +93,7 @@
  *
  * Expressed in milliseconds
  */
-#define DELAY_PING_PONG_PACE_MS 200
+#define DELAY_PING_PONG_PACE_MS 2000
 
 /**
  * @brief LR11xx interrupt mask used by the application
@@ -172,15 +172,16 @@ int main( void )
     smtc_hal_mcu_init( );
     apps_common_shield_init( );
     uart_init();
+    MX_GPIO_Init();
 
     HAL_DBG_TRACE_INFO( " ===== LR11xx Transmitter example =====\n\r" );
     lis2de12_filter_hp_rst_on_int();
-    apps_common_print_sdk_driver_version( );
+//    apps_common_print_sdk_driver_version( );
 
     context = apps_common_lr11xx_get_context( );
 
     apps_common_lr11xx_system_init( ( void* ) context );
-    apps_common_lr11xx_fetch_and_print_version( ( void* ) context );
+//    apps_common_lr11xx_fetch_and_print_version( ( void* ) context );
     apps_common_lr11xx_radio_init( ( void* ) context );
 
     ASSERT_LR11XX_RC( lr11xx_system_set_dio_irq_params( context, IRQ_MASK, 0 ) );
@@ -218,13 +219,20 @@ void on_tx_done( void )
 
     LL_mDelay( DELAY_PING_PONG_PACE_MS );
 
-    // lis2de12_filter_hp_rst_on_int();
+//    lis2de12_filter_hp_rst_on_int();
+//
+//    for ( int i=0; i < 3; i++)
+//    {
+//    	tx.aceeleration[i] = acceleration_mg[i];
+//    }
 
     ASSERT_LR11XX_RC( lr11xx_regmem_write_buffer8( context, tx.buffer_tx, PAYLOAD_LENGTH ) );
 
     apps_common_lr11xx_handle_pre_tx( );
 
     ASSERT_LR11XX_RC( lr11xx_radio_set_tx( context, 0 ) );
+
+//        main();
 }
 
 void on_rx_timeout( void )

@@ -60,7 +60,7 @@ static int32_t platform_read(void *handle, uint8_t reg, uint8_t *bufp,
 static void platform_delay(uint32_t ms);
 static void platform_init(void);
 static void MX_I2C1_Init(void);
-static void MX_GPIO_Init(void);
+void MX_GPIO_Init(void);
 
 /* Main Example --------------------------------------------------------------*/
 void lis2de12_filter_hp_rst_on_int(void)
@@ -254,7 +254,7 @@ static void platform_init(void)
   * @param None
   * @retval None
   */
-static void MX_GPIO_Init(void)
+void MX_GPIO_Init(void)
 {
   LL_EXTI_InitTypeDef EXTI_InitStruct = {0};
   LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
