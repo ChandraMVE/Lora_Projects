@@ -1,0 +1,3 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_bootloader_types_str.c:38:13:lr11xx_bootloader_chip_modes_to_str	8
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_bootloader_types_str.c:84:13:lr11xx_bootloader_reset_status_to_str	8
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_bootloader_types_str.c:130:13:lr11xx_bootloader_command_status_to_str	5

@@ -1,0 +1,4 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/apps_version.c:115:6:apps_version_fetch_check_print_version	24	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/apps_version.c:129:6:apps_version_assert_version_is_lr1110	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/apps_version.c:134:6:apps_version_assert_version_is_lr1120	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/apps_version.c:139:6:apps_version_assert_version_is_geolocation_capable	16	static

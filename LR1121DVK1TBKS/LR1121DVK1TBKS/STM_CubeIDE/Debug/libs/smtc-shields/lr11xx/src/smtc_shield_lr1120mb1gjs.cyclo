@@ -1,0 +1,7 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:83:40:smtc_shield_lr1120mb1gjs_get_pa_pwr_cfg	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:89:46:smtc_shield_lr1120mb1gjs_get_rssi_calibration_table	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:95:37:smtc_shield_lr1120mb1gjs_get_rf_switch_cfg	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:100:26:smtc_shield_lr1120mb1gjs_get_reg_mode	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:105:38:smtc_shield_lr1120mb1gjs_get_xosc_cfg	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:110:39:smtc_shield_lr1120mb1gjs_get_lfclk_cfg	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr1120mb1gjs.c:115:36:smtc_shield_lr1120mb1gjs_get_pinout	1

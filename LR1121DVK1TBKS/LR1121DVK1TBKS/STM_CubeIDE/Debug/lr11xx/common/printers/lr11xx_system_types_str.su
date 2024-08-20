@@ -1,0 +1,9 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:38:13:lr11xx_system_chip_modes_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:84:13:lr11xx_system_reset_status_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:130:13:lr11xx_system_command_status_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:161:13:lr11xx_system_lfclk_cfg_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:187:13:lr11xx_system_reg_mode_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:208:13:lr11xx_system_infopage_id_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:229:13:lr11xx_system_standby_cfg_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:250:13:lr11xx_system_tcxo_supply_voltage_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_system_types_str.c:301:13:lr11xx_system_version_type_to_str	16	static

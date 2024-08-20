@@ -1,0 +1,4 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/common/src/uart_init.c:85:6:uart_init	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/common/src/uart_init.c:90:6:uart_init_with_rx_callback	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/common/src/uart_init.c:95:6:vprint	2
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/common/src/uart_init.c:109:6:uart_init_base	1

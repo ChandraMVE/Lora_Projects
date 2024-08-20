@@ -1,0 +1,17 @@
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:358:22:LL_SPI_Enable	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:381:26:LL_SPI_IsEnabled	2
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:426:22:LL_SPI_SetStandard	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:665:22:LL_SPI_SetRxFIFOThreshold	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:874:22:LL_SPI_DisableNSSPulseMgt	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:993:26:LL_SPI_GetRxFIFOLevel	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1008:26:LL_SPI_GetTxFIFOLevel	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1333:25:LL_SPI_ReceiveData8	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1356:22:LL_SPI_TransmitData8	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h:563:22:LL_AHB2_GRP1_EnableClock	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h:1087:22:LL_APB1_GRP1_EnableClock	1
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h:1673:22:LL_APB2_GRP1_EnableClock	1
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_spi_stm32l4.c:118:23:smtc_hal_mcu_spi_init	6
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_spi_stm32l4.c:211:23:smtc_hal_mcu_spi_deinit	6
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_spi_stm32l4.c:258:23:smtc_hal_mcu_spi_rw_buffer	11
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_spi_stm32l4.c:306:40:smtc_hal_mcu_spi_stm32l4_get_free_slot	3
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_spi_stm32l4.c:319:13:smtc_hal_mcu_spi_stm32l4_is_real_inst	3

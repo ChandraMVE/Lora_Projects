@@ -1,0 +1,5 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11xx_common.c:173:46:smtc_shield_lr11xx_get_rssi_calibration_table	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11xx_common.c:190:37:smtc_shield_lr11xx_common_get_rf_switch_cfg	4	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11xx_common.c:195:26:smtc_shield_lr11xx_common_get_reg_mode	4	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11xx_common.c:200:39:smtc_shield_lr11xx_common_get_lfclk_cfg	4	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11xx_common.c:205:36:smtc_shield_lr11xx_common_get_pinout	4	static

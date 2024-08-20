@@ -1,0 +1,16 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:38:13:lr11xx_gnss_constellation_to_str	3
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:59:13:lr11xx_gnss_search_mode_to_str	5
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:85:13:lr11xx_gnss_destination_to_str	5
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:111:13:lr11xx_gnss_message_host_status_to_str	16
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:197:13:lr11xx_gnss_message_dmc_opcode_to_str	2
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:213:13:lr11xx_gnss_scan_mode_to_str	3
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:234:13:lr11xx_gnss_error_code_to_str	6
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:270:13:lr11xx_gnss_freq_search_space_to_str	5
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:301:13:lr11xx_gnss_fetch_time_option_to_str	5
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:327:13:lr11xx_gnss_read_time_status_to_str	5
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:353:13:lr11xx_gnss_week_number_rollover_status_to_str	3
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:374:13:lr11xx_gnss_demod_status_to_str	29
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:525:13:lr11xx_gnss_doppler_solver_error_code_to_str	10
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:581:13:lr11xx_gnss_almanac_status_to_str	7
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:622:13:lr11xx_gnss_sv_type_to_str	3
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_gnss_types_str.c:643:13:lr11xx_gnss_scan_mode_launched_to_str	9

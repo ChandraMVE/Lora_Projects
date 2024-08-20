@@ -1,0 +1,10 @@
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h:3011:22:LL_RCC_SetI2CClockSource	24	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h:3031:22:LL_RCC_SetLPTIMClockSource	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h:3115:22:LL_RCC_SetRNGClockSource	16	static
+../Core/Src/stm32l4xx_hal_msp.c:64:6:HAL_MspInit	16	static
+../Core/Src/stm32l4xx_hal_msp.c:89:6:HAL_I2C_MspInit	48	static
+../Core/Src/stm32l4xx_hal_msp.c:127:6:HAL_I2C_MspDeInit	16	static
+../Core/Src/stm32l4xx_hal_msp.c:158:6:HAL_LPTIM_MspInit	48	static
+../Core/Src/stm32l4xx_hal_msp.c:196:6:HAL_LPTIM_MspDeInit	16	static
+../Core/Src/stm32l4xx_hal_msp.c:224:6:HAL_RNG_MspInit	24	static
+../Core/Src/stm32l4xx_hal_msp.c:249:6:HAL_RNG_MspDeInit	16	static

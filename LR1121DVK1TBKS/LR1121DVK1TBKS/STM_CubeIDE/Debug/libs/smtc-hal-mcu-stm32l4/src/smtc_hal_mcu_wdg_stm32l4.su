@@ -1,0 +1,13 @@
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h:141:22:LL_IWDG_Enable	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h:152:22:LL_IWDG_ReloadCounter	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h:163:22:LL_IWDG_EnableWriteAccess	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h:193:22:LL_IWDG_SetPrescaler	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h:223:22:LL_IWDG_SetReloadCounter	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h:311:26:LL_IWDG_IsReady	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h:2422:22:LL_RCC_LSI_Enable	4	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h:2442:26:LL_RCC_LSI_IsReady	4	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_wdg_stm32l4.c:126:23:smtc_hal_mcu_wdg_init_and_start	32	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_wdg_stm32l4.c:169:23:smtc_hal_mcu_wdg_stop	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_wdg_stm32l4.c:171:23:smtc_hal_mcu_wdg_reload	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_wdg_stm32l4.c:193:13:smtc_hal_mcu_wdg_stm32l4_is_real_inst	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-hal-mcu-stm32l4/src/smtc_hal_mcu_wdg_stm32l4.c:203:30:smtc_hal_mcu_wdg_stm32l4_get_pr_rl	32	static

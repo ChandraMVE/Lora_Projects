@@ -1,0 +1,8 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:38:13:lr11xx_wifi_channel_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:129:13:lr11xx_wifi_datarate_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:270:13:lr11xx_wifi_frame_type_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:296:13:lr11xx_wifi_mac_origin_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:322:13:lr11xx_wifi_signal_type_scan_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:353:13:lr11xx_wifi_signal_type_result_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:379:13:lr11xx_wifi_mode_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_wifi_types_str.c:410:13:lr11xx_wifi_result_format_to_str	16	static

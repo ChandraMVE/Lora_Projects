@@ -1,0 +1,12 @@
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h:563:22:LL_AHB2_GRP1_EnableClock	24	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_system.h:773:22:LL_SYSCFG_SetEXTISource	32	static,ignoring_inline_asm
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h:285:22:LL_GPIO_SetPinMode	48	static,ignoring_inline_asm
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h:496:22:LL_GPIO_SetPinPull	48	static,ignoring_inline_asm
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h:985:22:LL_GPIO_ResetOutputPin	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:143:9:platform_write	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:163:9:platform_read	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:179:6:platform_delay	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:189:6:MX_I2C1_Init	8	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:234:6:platform_init	8	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:246:6:MX_GPIO_Init	48	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_drv.c:327:6:lis2de12_init_and_configure	40	static

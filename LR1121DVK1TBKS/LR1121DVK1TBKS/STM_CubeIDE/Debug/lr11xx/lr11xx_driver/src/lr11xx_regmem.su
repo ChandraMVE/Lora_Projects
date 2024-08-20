@@ -1,0 +1,13 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:150:17:lr11xx_regmem_write_regmem32	304	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:168:17:lr11xx_regmem_read_regmem32	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:191:17:lr11xx_regmem_write_mem8	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:202:17:lr11xx_regmem_read_mem8	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:212:17:lr11xx_regmem_write_buffer8	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:223:17:lr11xx_regmem_read_buffer8	40	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:237:17:lr11xx_regmem_clear_rxbuffer	32	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:247:17:lr11xx_regmem_write_regmem32_mask	48	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:272:6:lr11xx_regmem_fill_cbuffer_opcode_address	24	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:283:6:lr11xx_regmem_fill_cbuffer_opcode_address_length	24	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:290:6:lr11xx_regmem_fill_cdata	32	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:303:6:lr11xx_regmem_fill_cbuffer_cdata_opcode_address_data	24	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_regmem.c:310:6:lr11xx_regmem_fill_out_buffer_from_raw_buffer	32	static

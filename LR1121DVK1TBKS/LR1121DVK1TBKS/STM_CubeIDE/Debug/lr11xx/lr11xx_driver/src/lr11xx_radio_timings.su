@@ -1,0 +1,5 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_radio_timings.c:112:10:lr11xx_radio_timings_get_delay_between_last_bit_sent_and_rx_done_in_us	24	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_radio_timings.c:120:10:lr11xx_radio_timings_get_delay_between_last_bit_sent_and_tx_done_in_us	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_radio_timings.c:131:17:lr11xx_radio_timings_get_pa_ramp_time_in_us	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_radio_timings.c:204:17:lr11xx_radio_timings_get_lora_rx_input_delay_in_us	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/lr11xx_driver/src/lr11xx_radio_timings.c:227:17:lr11xx_radio_timings_get_lora_symb_time_in_us	24	static

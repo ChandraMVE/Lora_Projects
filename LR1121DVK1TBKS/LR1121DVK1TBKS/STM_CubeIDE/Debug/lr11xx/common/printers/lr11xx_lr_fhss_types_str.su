@@ -1,0 +1,4 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_lr_fhss_types_str.c:38:13:lr_fhss_v1_modulation_type_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_lr_fhss_types_str.c:54:13:lr_fhss_v1_cr_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_lr_fhss_types_str.c:85:13:lr_fhss_v1_grid_to_str	16	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lr11xx/common/printers/lr11xx_lr_fhss_types_str.c:106:13:lr_fhss_v1_bw_to_str	16	static

@@ -1,0 +1,2 @@
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11x0_common.c:87:38:smtc_shield_lr11x0_common_get_xosc_cfg	4	static
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/libs/smtc-shields/lr11xx/src/smtc_shield_lr11x0_common.c:92:6:smtc_shield_lr11x0_common_rttof_recommended_rx_tx_delay_indicator	24	static

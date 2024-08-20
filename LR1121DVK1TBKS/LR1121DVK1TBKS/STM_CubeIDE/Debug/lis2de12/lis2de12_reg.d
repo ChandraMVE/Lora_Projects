@@ -1,0 +1,4 @@
+lis2de12/lis2de12_reg.o: \
+ E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_reg.c \
+ E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_reg.h
+E:/LoRaSensor/LR1121DVK1TBKS/LR1121DVK1TBKS/lis2de12/lis2de12_reg.h:
